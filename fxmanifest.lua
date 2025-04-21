@@ -15,7 +15,16 @@ shared_script  {
   '@ox_lib/init.lua'
 }
 
-dependency 'ox_lib'
+dependencies {
+  'ox_lib',
+  'oxmysql'
+}
 
 client_script "client/**/*"
-server_script "server/**/*"
+
+server_scripts {
+  -- Uncomment below if you will use oxmysql
+  --'@oxmysql/lib/MySQL.lua',
+  "server/**/*"
+}
+
